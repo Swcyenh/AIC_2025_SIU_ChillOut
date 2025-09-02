@@ -1,3 +1,647 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:93617991aa0993b2efe22032b0d3c77979bf5b8729c490358a17913ccc21465d
-size 23728
+<!doctype html>
+<html>
+
+<head>
+    <base href="/siu_chillout_10/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+</head>
+
+<style>
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background-color: #fff; 
+    }
+
+    .model-options {
+        display: flex;
+        flex-direction: column; 
+    }
+
+    input[type="submit"], .w3-btn {
+        height: 40px;
+        padding: 0 15px; 
+    }
+
+    .form-check-input {
+        width: 20px; 
+        height: 20px; 
+    }
+    .frame-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 5px;
+        padding: 5px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+    }
+    .frame-item button {
+        margin-left: 5px;
+        padding: 2px 6px;
+        cursor: pointer;
+    }
+    
+    img {
+        border: 1px solid #ff0000;
+        border-radius: 4px;
+        padding: 5px;
+        width: 100%;
+        max-width: 234px;
+        height: auto;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    img:hover {
+        box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.5);
+        transform: scale(1.8);
+    }
+
+    .image-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 150px;
+        z-index: 1001;
+    }
+
+    .form-control {
+        flex: 1;
+        margin-bottom: 10px;
+    }
+
+    .input-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .flex-options {
+        display: flex;
+        justify-content: space-evenly; 
+        gap: 10px; 
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    #query_table {
+        width: 100%;
+        text-align: center;
+    }
+
+    .text-field-container {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .body {
+        margin-top: 60px; 
+    }
+    
+    .model-options input.form-check-input {
+        margin-right: 5px;
+    }
+    .model-options label {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px; 
+        font-size: 14px; 
+    }
+    .model-options input[type="radio"],
+    .model-options input[type="checkbox"] {
+        height: 20px;
+        width: 20px;
+        margin-right: 5px;
+    }
+
+    .hidden-bar {
+        position: fixed;
+        top: 50%;  
+        right: -250px;
+        width: 250px;
+        height: auto;
+        background-color: #fff;
+        color: #fff;
+        transition: 0.01s;
+        z-index: 999;
+        padding: 20px;
+        box-sizing: border-box;
+        margin-top: 10px;
+    }
+
+    #toggleButton {
+        position: fixed;
+        top: 50%;  
+        right: 0; 
+        transform: translateY(-50%); 
+        z-index: 1000;
+        background-color: #20dfaffd;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        transition: 0.01s;
+    }
+
+    .hidden-bar.open {
+        right: 0;  
+    }
+
+    #toggleButton.open {
+        right: 250px; 
+    }
+
+    .input-row {
+        margin-bottom: 2px;
+    }
+
+    .text-field-container {
+        display: flex;
+        flex-direction: column;  
+        gap: 2px; 
+    }
+
+</style>
+
+<body>
+    <header class="header">
+    <div id="Text_search">
+        <form method="POST" action="/siu_chillout_10/predict" id="searchForm">
+            <div class="input-row">
+                <div class="text-field-container item-center justify-center">
+                    <input class="form-control" name="text" id="query_table" type="text" placeholder="Enter your queries..." />
+                </div>
+            </div>
+
+            <div class="model-options">
+                <div class="flex-options item-center justify-center">
+                     <div class="flex-options">
+                        <div>
+                            <input class="form-check-input" name="model" id="MetaCLIP" type="radio" value="MetaCLIP">
+                            <label for="MetaCLIP">MetaCLIP</label>
+                        </div>
+                        <div>
+                            <input class="form-check-input" name="model" id="DFN5B" type="radio" value="DFN5B">
+                            <label for="DFN5B">JinaCLIP</label>
+                        </div>
+                        <div>
+                            <input class="form-check-input" name="model" id="EvaCLIP" type="radio" value="EvaCLIP">
+                            <label for="EvaCLIP">Siglip2</label>
+                        </div>
+                        <div>
+                            <input class="form-check-input" name="model" id="Combine" type="radio" value="Combine">
+                            <label for="Combine">Combine</label>
+                        </div>
+                        <div>
+                            <input class="form-check-input" name="trans" id="trans" type="checkbox" value="1" checked  >
+                            <label for="trans">Translation</label>
+                        </div>
+                                               <div>
+                            <input class="form-check-input" name="temporal" id="temporal" type="checkbox" value="1">
+                            <label for="temporal">Temporal</label>
+                        </div>
+                        <div>
+                            <input class="w3-btn w3-white w3-border w3-border-red w3-text-red mb-2" type="submit" id="submit" value="Search">
+                        </div>
+                    </div>
+                    <div class="flex-options item-center justify-center">
+                        <input type="text" id="videoNameInput" class="form-control" placeholder="Enter video name" style="flex:1;">
+                        <input type="text" id="frameInput" class="form-control" placeholder="Enter frame number" style="flex: 1;">
+                        <input type="text" id="qaAnswer" class="form-control" placeholder="Enter QA Answer (optional)" style="flex:1;">
+                        <input type="text" id="statusBox" class="form-control" readonly placeholder="STATUS" style="flex:1;">
+                        <button class="w3-btn w3-white w3-border w3-border-red w3-text-red mb-2" type="button" onclick="submitAPI('QA')">Submit QA</button>
+                        <button class="w3-btn w3-white w3-border w3-border-red w3-text-red mb-2" type="button" onclick="submitAPI('KIS')">Submit KIS</button>
+                        <select id="csvFormatSelect" class="form-select" style="width:auto;">
+                            <option value="KIS">Textual KIS</option>
+                            <option value="QA">Q&A</option>
+                        </select>
+                            <button class="w3-btn w3-white w3-border w3-border-green w3-text-green mb-2" 
+                                    type="button" onclick="downloadCSV()">Download CSV</button>
+                    </div> 
+                </div>
+            </div>
+        </form>
+        <div id="hiddenBar" class="hidden-bar">
+            <div class="input-row">
+                <div class="text-field-container item-center justify-center">
+                    <input type="text" id="sessionIDInput" class="form-control mb-2" readonly placeholder="Session ID" style="flex: 1;">
+                    <input type="text" id="evaluationIDInput" class="form-control mb-2" readonly placeholder="Evaluation ID" style="flex: 1;">
+                </div>
+            </div>
+        </div>
+
+        <button id="toggleButton" onclick="toggleHiddenBar()">☰</button>
+    </div>
+    </header>
+
+    <div class="image-container">
+        {% if query_path %}
+        <img src="{{ query_path }}" width="100%">
+        {% endif %}
+        {% for f, id, start in files %}
+        <div class="thumbnail">
+            <img class="w3-image big-img" id="{{id}}" src="/siu_chillout_10{{ url_for('download_file', filename=f) }}" height="300px" value="1">
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="videoModalLabel">Video Preview</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <video id="videoPlayer" class="w-100" controls>
+                        <source id="videoSource" src="" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="mt-3">
+                        <label for="playbackSpeedSelect">Playback Speed:</label>
+                        <select id="playbackSpeedSelect" class="form-select">
+                            <option value="0.25">0.25x</option>
+                            <option value="0.5">0.5x</option>
+                            <option value="0.75">0.75x</option>
+                            <option value="1" selected>1x</option>
+                            <option value="1.25">1.25x</option>
+                            <option value="1.5">1.5x</option>
+                            <option value="1.75">1.75x</option>
+                            <option value="2">2x</option>
+                        </select>
+                    </div>
+                    <button id="selectFrameBtn" class="w3-btn w3-white w3-border w3-border-red w3-text-red">Select Frame</button>
+                    <div id="selectedFramesList" class="mt-3"></div>
+                    <button id="downloadTrakeBtn">Download TRAKE CSV</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    function toggleHiddenBar() {
+        const hiddenBar = document.getElementById('hiddenBar');
+        const toggleButton = document.getElementById('toggleButton');
+        hiddenBar.classList.toggle('open');
+        toggleButton.classList.toggle('open');
+    }
+
+    async function getSessionAndEvaluationID() {
+        const BASE_URL = "https://api.siu.edu.vn/siu_chillout_1";
+        const USERNAME = "siu_chillout";
+        const PASSWORD = "siu_chillout";
+
+        try {
+            // Step 1: Login and get sessionID
+            const loginResp = await fetch(`${BASE_URL}/api/v2/login`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    username: USERNAME,
+                    password: PASSWORD
+                })
+            });
+
+            if (!loginResp.ok) {
+                throw new Error(`Login failed: ${loginResp.status}`);
+            }
+
+            const loginData = await loginResp.json();
+            const sessionID = loginData.sessionId;
+            console.log("✅ Logged in, session ID:", sessionID);
+
+            // Step 2: Get evaluations
+            const evalResp = await fetch(`${BASE_URL}/api/v2/client/evaluation/list?session=${sessionID}`);
+            if (!evalResp.ok) {
+                throw new Error(`Failed to fetch evaluations: ${evalResp.status}`);
+            }
+
+            const evaluations = await evalResp.json();
+            const activeEval = evaluations.find(e => e.status === "ACTIVE");
+
+            if (!activeEval) {
+                throw new Error("❌ No active evaluation found.");
+            }
+
+            const evaluationID = activeEval.id;
+            console.log("📌 Active Evaluation ID:", evaluationID);
+
+            // Set values in the inputs
+            document.getElementById('sessionIDInput').value = sessionID;
+            document.getElementById('evaluationIDInput').value = evaluationID;
+
+            // Save to localStorage
+            localStorage.setItem('lastSessionID', sessionID);
+            localStorage.setItem('lastEvaluationID', evaluationID);
+
+        } catch (err) {
+            console.error(err);
+            alert("Error fetching Session/Evaluation ID: " + err.message);
+        }
+    }
+    
+        function submitAPI(submissionType) {
+            const sessionID = document.getElementById("sessionIDInput").value;
+            const evaluationID = document.getElementById("evaluationIDInput").value;
+            const videoName = document.getElementById("videoNameInput").value;
+            const frame = document.getElementById("frameInput").value;
+            const qaAnswer = document.getElementById("qaAnswer").value;
+
+            if (!sessionID || !evaluationID) {
+                alert('Session ID and Evaluation ID required.');
+                return;
+            }
+
+            let requestBody = {};
+            if (submissionType === "QA") {
+                requestBody = {
+                    session: sessionID,
+                    answerSets: [{
+                        answers: [{ text: `${qaAnswer}-${videoName}-${frame}` }]
+                    }]
+                };
+            } else if (submissionType === "KIS") {
+                requestBody = {
+                    session: sessionID,
+                    answerSets: [{
+                        answers: [{
+                            mediaItemName: videoName,
+                            start: frame,
+                            end: frame
+                        }]
+                    }]
+                };
+            }
+
+            fetch(`https://api.siu.edu.vn/siu_chillout_1/api/v2/submit/${evaluationID}?session=${sessionID}`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(requestBody)
+            })
+            .then(res => res.json())
+            .then(data => {
+                const output = data?.submission ?? "No 'submission' key in response.";
+                document.getElementById("statusBox").value = output;
+                localStorage.setItem('lastSessionID', sessionID);
+                localStorage.setItem('lastEvaluationID', evaluationID);
+            })
+            .catch(err => {
+                document.getElementById("statusBox").value = "Error: " + err.message;
+            });
+        }
+        
+        
+        function updateSelectedFramesList() {
+            const container = document.getElementById('selectedFramesList');
+            container.innerHTML = '';
+        
+            selectedFramesTRAKE.forEach((frame, index) => {
+                const item = document.createElement('div');
+                item.className = "frame-item";
+                item.innerHTML = `
+                    <span>${index + 1}. ${frame.videoName}, ${frame.frameId}</span>
+                    <button onclick="moveFrame(${index}, -1)">▲</button>
+                    <button onclick="moveFrame(${index}, 1)">▼</button>
+                    <button onclick="removeFrame(${index})">✖</button>
+                `;
+                container.appendChild(item);
+            });
+        }
+        function moveFrame(index, direction) {
+            const newIndex = index + direction;
+            if (newIndex < 0 || newIndex >= selectedFramesTRAKE.length) return; // out of bounds
+            [selectedFramesTRAKE[index], selectedFramesTRAKE[newIndex]] =
+                [selectedFramesTRAKE[newIndex], selectedFramesTRAKE[index]];
+            updateSelectedFramesList();
+        }
+        
+        function removeFrame(index) {
+            selectedFramesTRAKE.splice(index, 1);
+            updateSelectedFramesList();
+        }
+                
+
+        
+        document.addEventListener('DOMContentLoaded', function () {
+            const queryBox = document.getElementById('query_table');
+            const lastQuery = localStorage.getItem('queryText');
+            if (lastQuery) {
+                queryBox.value = lastQuery;
+            }
+            queryBox.addEventListener('input', function() {
+                localStorage.setItem('queryText', queryBox.value);
+            });
+            
+            getSessionAndEvaluationID();
+
+            const images = document.querySelectorAll('.big-img');
+            images.forEach(img => {
+                img.style.width = "234px";  
+                img.style.height = "auto";  
+            });
+
+            const slider = document.getElementById('imageSizeSlider');
+            const output = document.getElementById('sliderValue');
+
+            slider.oninput = function () {
+                const w = this.value;
+                const h = w / 2;
+                output.textContent = w + 'px';
+                images.forEach(img => {
+                    img.style.width = w + 'px';
+                    img.style.height = h + 'px';
+                });
+            };
+
+            const lastSession = localStorage.getItem('lastSessionID');
+            const lastEval = localStorage.getItem('lastEvaluationID');
+            if (lastSession) document.getElementById('sessionIDInput').value = lastSession;
+            if (lastEval) document.getElementById('evaluationIDInput').value = lastEval;
+
+            document.getElementById('searchForm')?.addEventListener('submit', () => {
+                localStorage.setItem('queryText', queryBox.value);
+                
+            });
+        });
+
+        document.addEventListener('keydown', function (e) {
+            const q = document.getElementById('query_table');
+
+            if (e.ctrlKey && e.key === 'x') {
+                e.preventDefault();
+                q.focus();
+            }
+
+            const keyMap = {
+                '1': 'MetaCLIP',
+                '2': 'DFN5B',
+                '3': 'EvaCLIP',
+                '4': 'Combine',
+            };
+
+            if (e.ctrlKey && keyMap[e.key]) {
+                e.preventDefault();
+                document.getElementById(keyMap[e.key]).click();
+                document.getElementById('submit').click();
+            }
+        });
+        function extractVideoAndFrame(imgSrc) {
+            const parts = imgSrc.split('/');
+            const videoName = parts[parts.length - 2];
+            const frameIdxRaw = parts[parts.length - 1].replace('.jpg', '');
+            const frameIdx = parseInt(frameIdxRaw, 10); // remove leading zeros
+            return { videoName, frameIdx };
+        }
+        
+        document.getElementById('downloadTrakeBtn').addEventListener('click', () => {
+            if (selectedFramesTRAKE.length === 0) {
+                alert('No frames selected!');
+                return;
+            }
+        
+            // Group frames by video
+            const grouped = {};
+            selectedFramesTRAKE.forEach(f => {
+                if (!grouped[f.videoName]) grouped[f.videoName] = [];
+                grouped[f.videoName].push(f.frameId);
+            });
+        
+            // Sort frames for each video
+            for (const v in grouped) {
+                grouped[v].sort((a, b) => a - b);
+            }
+        
+            // Build rows
+            const rows = Object.entries(grouped).map(([video, frames]) => {
+                return `${video}, ${frames.join(", ")}`;
+            });
+        
+            // Create downloadable CSV
+            const csvContent = "data:text/csv;charset=utf-8," + rows.join("\n");
+            const encodedUri = encodeURI(csvContent);
+            const link = document.createElement("a");
+            link.setAttribute("href", encodedUri);
+            link.setAttribute("download", "trake_selected_frames.csv");
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
+        
+        
+        function downloadCSV() {
+            const images = document.querySelectorAll('.big-img');
+            const format = document.getElementById('csvFormatSelect').value;
+            const answerInput = document.getElementById('qaAnswer').value.trim();
+            const rows = [];
+            let count = 0;
+        
+            images.forEach(img => {
+                if (count >= 200) return;
+        
+                const { videoName, frameIdx } = extractVideoAndFrame(img.src);
+        
+                if (format === "KIS") {
+                    rows.push(`${videoName}, ${frameIdx}`);
+                } 
+                else if (format === "QA") {
+                    const answer = answerInput || "Your Answer";
+                    rows.push(`${videoName}, ${frameIdx}, "${answer}"`);
+                } 
+                else if (format === "TRAKE") {
+                    rows.push(`${videoName}, ${frameIdx}, ${parseInt(frameIdx)+500}, ${parseInt(frameIdx)+1000}`);
+                }
+        
+                count++;
+            });
+        
+            const csvContent = "data:text/csv;charset=utf-8," + rows.join("\n");
+            const encodedUri = encodeURI(csvContent);
+            const link = document.createElement("a");
+            link.setAttribute("href", encodedUri);
+            link.setAttribute("download", `submission_${format.toLowerCase()}.csv`);
+            document.body.appendChild(link);
+            link.click();
+
+            document.body.removeChild(link);
+        }
+        
+        let selectedFramesTRAKE = []; // array of {videoName, frameId}
+
+        document.getElementById('selectFrameBtn').addEventListener('click', () => {
+            const videoPlayer = document.getElementById('videoPlayer');
+            const videoName = document.getElementById('videoNameInput').value;
+        
+            // Convert current time to frame (ms or frame index)
+            const frameId = Math.round(videoPlayer.currentTime * 1000); // if frame ID = ms
+            selectedFramesTRAKE.push({videoName, frameId});
+        
+            alert(`Frame selected: ${videoName}, ${frameId}`);
+            updateSelectedFramesList();  //
+        });
+        
+        
+        
+        
+        document.querySelectorAll('.big-img').forEach(img => {
+            img.addEventListener('click', function (event) {
+                const imgIdParts = img.id.split(',');
+                const timeString = imgIdParts[0];
+                const videoName = imgIdParts[2];
+
+                document.getElementById('videoNameInput').value = videoName;
+
+                const timeParts = timeString.split(':').map(Number);
+                let timeMs = 0;
+                if (timeParts.length === 3) {
+                    timeMs = (timeParts[0] * 3600 + timeParts[1] * 60 + timeParts[2]) * 1000;
+                } else if (timeParts.length === 2) {
+                    timeMs = (timeParts[0] * 60 + timeParts[1]) * 1000;
+                }
+                document.getElementById('frameInput').value = timeMs;
+
+                if (event.altKey && event.button === 0) {
+                    event.preventDefault();
+
+                    const folderPrefix = parseInt(videoName.substring(1, 3)) >= 13 ? "1" : "0";
+                    const path = `/siu_chillout_10/img/dataset/AIC_2025/original_dataset/0/videos/Videos_${videoName.substring(0, 3)}/video/${videoName}.mp4`;
+
+                    const videoPlayer = document.getElementById('videoPlayer');
+                    const videoSource = document.getElementById('videoSource');1
+                    const modalTitle = document.getElementById('videoModalLabel');
+
+                    videoSource.src = path;
+                    videoPlayer.load();
+
+                    modalTitle.textContent = `${videoName} ${timeString}`;
+
+                    videoPlayer.addEventListener('loadedmetadata', function () {
+                        videoPlayer.currentTime = timeMs / 1000;
+                        videoPlayer.play();
+                    }, { once: true });
+
+                    const videoModalElement = document.getElementById('videoModal');
+                    const videoModalInstance = new bootstrap.Modal(videoModalElement);
+                    videoModalInstance.show();
+
+                    const playbackSpeedSelect = document.getElementById('playbackSpeedSelect');
+                    playbackSpeedSelect.value = "2";
+                    videoPlayer.playbackRate = 2;
+                }
+            });
+        });
+
+    </script>
+</body>
+
+</html>
