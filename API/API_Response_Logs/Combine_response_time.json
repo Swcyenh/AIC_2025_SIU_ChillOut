@@ -1,0 +1,103 @@
+{
+  "model": "Combine",
+  "records": [
+    {
+      "date_time": "2025-09-05T21:02:18",
+      "model": "MetaCLIP",
+      "request_type": "temporal",
+      "text": "The scene started with a factory with many modern machines. Then the image of a calendar with a few days emphasized with red or yellow circles. The news ended with a small road with pedestrians and cars, the two sides were Vietnamese flags, on the left there was a grocery store with the word \"Khanh Ha\". How many flags are hung on the sides of the road?",
+      "response_time": 3.623500347137451
+    },
+    {
+      "date_time": "2025-09-05T21:58:14",
+      "model": "MetaCLIP",
+      "request_type": "temporal",
+      "text": "woman being interview.ship sailling in the night",
+      "response_time": 1.3033785820007324
+    },
+    {
+      "date_time": "2025-09-05T22:00:09",
+      "model": "MetaCLIP",
+      "request_type": "temporal",
+      "text": "a motorbike behind, red box on blue table. ship sailling in the night",
+      "response_time": 1.55084228515625
+    },
+    {
+      "date_time": "2025-09-05T22:00:17",
+      "model": "MetaCLIP",
+      "request_type": "temporal",
+      "text": "a motorbike behind, red box on blue table. ship sailling in the night",
+      "response_time": 1.8211557865142822
+    },
+    {
+      "date_time": "2025-09-06T21:31:52",
+      "model": "EvaCLIP",
+      "request_type": "temporal",
+      "text": "Male students are speaking at the opening ceremony. Next is the 4 -person scene on stage with a Vietnamese map placed on the stand. The end is the scene where a male friend wears a black vest interview",
+      "response_time": 4.215521574020386
+    },
+    {
+      "date_time": "2025-09-07T08:32:13",
+      "model": "Combine",
+      "request_type": "rrf",
+      "text": "Male students are speaking at the opening ceremony. Next is the 4 -person scene on stage with a Vietnamese map placed on the stand. The end is the scene where a male friend wears a black vest interview",
+      "response_time": 1.29300856590271
+    },
+    {
+      "date_time": "2025-09-07T08:34:35",
+      "model": "Combine",
+      "request_type": "rrf",
+      "text": "Male students are speaking at the opening ceremony. Next is the 4 -person scene on stage with a Vietnamese map placed on the stand. The end is the scene where a male friend wears a black vest interview",
+      "response_time": 2.381530284881592
+    },
+    {
+      "date_time": "2025-09-07T08:40:07",
+      "model": "Combine",
+      "request_type": "rrf",
+      "text": "Male students are speaking at the opening ceremony. Next is the 4 -person scene on stage with a Vietnamese map placed on the stand. The end is the scene where a male friend wears a black vest interview",
+      "response_time": 2.1749746799468994
+    },
+    {
+      "date_time": "2025-09-07T08:40:44",
+      "model": "Combine",
+      "request_type": "rrf",
+      "text": "Male students are speaking at the opening ceremony. Next is the 4 -person scene on stage with a Vietnamese map placed on the stand. The end is the scene where a male friend wears a black vest interview",
+      "response_time": 2.1893837451934814
+    },
+    {
+      "date_time": "2025-09-07T09:05:28",
+      "model": "Combine",
+      "request_type": "rrf",
+      "text": "Fishermen have just caught a rare size shark",
+      "response_time": 2.925823211669922
+    },
+    {
+      "date_time": "2025-09-07T09:13:32",
+      "model": "Combine",
+      "request_type": "rrf",
+      "text": "The elderly woman is reading a book, wearing a beaded string that is opening a book with a portrait of a black and white old man with the white words above. The cover of the book is yellow as the main color",
+      "response_time": 3.729248523712158
+    },
+    {
+      "date_time": "2025-09-07T09:28:53",
+      "model": "Combine",
+      "request_type": "temporal",
+      "text": "Brigde.interview a man in a bucket hat",
+      "response_time": 4.893689155578613
+    },
+    {
+      "date_time": "2025-09-07T10:15:48",
+      "model": "Combine",
+      "request_type": "temporal",
+      "text": "stone column. flooding. pov from the brigde.cop",
+      "response_time": 4.439480304718018
+    },
+    {
+      "date_time": "2025-09-09T21:18:57",
+      "model": "Combine",
+      "request_type": "temporal",
+      "text": "The video begins with the dish being presented on a plate, the plate has a blue rim, the dish is decorated with a few green leaves on top, then there is an interview scene of a man in a green shirt, with a goatee",
+      "response_time": 0.4525933265686035
+    }
+  ]
+}
