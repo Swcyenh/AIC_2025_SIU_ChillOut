@@ -1,0 +1,23 @@
+{
+  "model": "MetaCLIP",
+  "records": [
+    {
+      "date_time": "2025-10-25T20:48:32",
+      "model": "MetaCLIP",
+      "text": "https://api.siu.edu.vn/siu_chillout_10/img//dataset/AIC_2025/SIU_Pumpking/1/frames/autoshot/Keyframes_K13/keyframes/K13_V003/11200.jpg",
+      "response_time": 6.023542881011963
+    },
+    {
+      "date_time": "2025-10-27T13:21:31",
+      "model": "MetaCLIP",
+      "text": "Many small sized turtles are eating vegetables in a turtle farm.",
+      "response_time": 10.24342966079712
+    },
+    {
+      "date_time": "2025-10-27T13:28:46",
+      "model": "MetaCLIP",
+      "text": "In the video introducing tourism, in the video there is an interviewer, in the background you can see the Imperial Citadel of Thang Long. Find the first time the following locations appeared in the news: E1: Turtle Tower appeared at Hoan Kiem Lake. E2: Hanoi Cathedral appears. E3: Hanoi Flagpole appears E4: Quoc Tu Giam Temple of Literature appears",
+      "response_time": 16.08977770805359
+    }
+  ]
+}}

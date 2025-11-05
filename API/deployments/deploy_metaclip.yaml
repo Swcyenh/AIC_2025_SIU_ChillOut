@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: metaclip
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: metaclip
+  template:
+    metadata:
+      labels:
+        app: metaclip
+    spec:
+      containers:
+      - name: metaclip
+        image: metaclip:latest
+        ports:
+        - containerPort: 8594
+        resources:
+          limits:
+            nvidia.com/gpu: 1        # giới hạn 1 GPU
+            cpu: "21"                # giới hạn CPU
+            memory: "16Gi"
+          requests:
+            cpu: "21"
+            memory: "16Gi"
+        env:
+        - name: CUDA_VISIBLE_DEVICES
+          value: "2"                 # chọn GPU 0
+        volumeMounts:
+        - name: log-volume
+          mountPath: /workspace/API/API_Run_Logs/metaclip
+      volumes:
+      - name: log-volume
+        hostPath:
+          path: /workspace/API/API_Run_Logs
+          type: Directory

@@ -1,0 +1,850 @@
+[2025-11-03 14:00:53 +0700] [3052641] [INFO] Starting gunicorn 23.0.0
+[2025-11-03 14:00:53 +0700] [3052641] [INFO] Listening at: http://0.0.0.0:8600 (3052641)
+[2025-11-03 14:00:53 +0700] [3052641] [INFO] Using worker: sync
+[2025-11-03 14:00:53 +0700] [3052786] [INFO] Booting worker with pid: 3052786
+[2025-11-03 14:00:53 +0700] [3052790] [INFO] Booting worker with pid: 3052790
+[2025-11-03 14:00:53 +0700] [3052792] [INFO] Booting worker with pid: 3052792
+[2025-11-03 14:00:53 +0700] [3052795] [INFO] Booting worker with pid: 3052795
+[2025-11-03 14:01:50 +0700] [3052641] [CRITICAL] WORKER TIMEOUT (pid:3052792)
+[2025-11-03 14:01:50 +0700] [3052792] [ERROR] Error handling request /predict
+Traceback (most recent call last):
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/gunicorn/workers/sync.py", line 177, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/flask/app.py", line 1498, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/workspace/competitions/AIC_2025/SIU_ChillOut/Main_Source/Web/server.py", line 104, in predict
+    result = requests.get(output).json()
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 536, in _make_request
+    response = conn.getresponse()
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/urllib3/connection.py", line 507, in getresponse
+    httplib_response = super().getresponse()
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/http/client.py", line 1348, in getresponse
+    response.begin()
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/http/client.py", line 316, in begin
+    version, status, reason = self._read_status()
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/http/client.py", line 277, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/socket.py", line 669, in readinto
+    return self._sock.recv_into(b)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/ssl.py", line 1274, in recv_into
+    return self.read(nbytes, buffer)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/ssl.py", line 1132, in read
+    return self._sslobj.read(len, buffer)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-11-03 14:01:50 +0700] [3052792] [INFO] Worker exiting (pid: 3052792)
+[2025-11-03 14:01:50 +0700] [3061124] [INFO] Booting worker with pid: 3061124
+[2025-11-03 14:21:14 +0700] [3052641] [CRITICAL] WORKER TIMEOUT (pid:3052786)
+[2025-11-03 14:21:14 +0700] [3052786] [ERROR] Error handling request /predict
+Traceback (most recent call last):
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/gunicorn/workers/sync.py", line 177, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/flask/app.py", line 1498, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/workspace/competitions/AIC_2025/SIU_ChillOut/Main_Source/Web/server.py", line 104, in predict
+    result = requests.get(output).json()
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 536, in _make_request
+    response = conn.getresponse()
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/urllib3/connection.py", line 507, in getresponse
+    httplib_response = super().getresponse()
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/http/client.py", line 1348, in getresponse
+    response.begin()
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/http/client.py", line 316, in begin
+    version, status, reason = self._read_status()
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/http/client.py", line 277, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/socket.py", line 669, in readinto
+    return self._sock.recv_into(b)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/ssl.py", line 1274, in recv_into
+    return self.read(nbytes, buffer)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/ssl.py", line 1132, in read
+    return self._sslobj.read(len, buffer)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-11-03 14:21:14 +0700] [3052786] [INFO] Worker exiting (pid: 3052786)
+[2025-11-03 14:21:14 +0700] [3286334] [INFO] Booting worker with pid: 3286334
+[2025-11-03 14:21:33 +0700] [3052641] [CRITICAL] WORKER TIMEOUT (pid:3052790)
+[2025-11-03 14:21:33 +0700] [3052790] [ERROR] Error handling request /predict
+Traceback (most recent call last):
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/gunicorn/workers/sync.py", line 177, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/flask/app.py", line 1498, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/workspace/competitions/AIC_2025/SIU_ChillOut/Main_Source/Web/server.py", line 104, in predict
+    result = requests.get(output).json()
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 536, in _make_request
+    response = conn.getresponse()
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/urllib3/connection.py", line 507, in getresponse
+    httplib_response = super().getresponse()
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/http/client.py", line 1348, in getresponse
+    response.begin()
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/http/client.py", line 316, in begin
+    version, status, reason = self._read_status()
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/http/client.py", line 277, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/socket.py", line 669, in readinto
+    return self._sock.recv_into(b)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/ssl.py", line 1274, in recv_into
+    return self.read(nbytes, buffer)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/ssl.py", line 1132, in read
+    return self._sslobj.read(len, buffer)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-11-03 14:21:33 +0700] [3052790] [INFO] Worker exiting (pid: 3052790)
+[2025-11-03 14:21:34 +0700] [3297958] [INFO] Booting worker with pid: 3297958
+[2025-11-03 14:47:55 +0700] [3052641] [CRITICAL] WORKER TIMEOUT (pid:3297958)
+[2025-11-03 14:47:55 +0700] [3297958] [ERROR] Error handling request /predict
+Traceback (most recent call last):
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/gunicorn/workers/sync.py", line 177, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/flask/app.py", line 1498, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/workspace/competitions/AIC_2025/SIU_ChillOut/Main_Source/Web/server.py", line 104, in predict
+    result = requests.get(output).json()
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 536, in _make_request
+    response = conn.getresponse()
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/urllib3/connection.py", line 507, in getresponse
+    httplib_response = super().getresponse()
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/http/client.py", line 1348, in getresponse
+    response.begin()
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/http/client.py", line 316, in begin
+    version, status, reason = self._read_status()
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/http/client.py", line 277, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/socket.py", line 669, in readinto
+    return self._sock.recv_into(b)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/ssl.py", line 1274, in recv_into
+    return self.read(nbytes, buffer)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/ssl.py", line 1132, in read
+    return self._sslobj.read(len, buffer)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-11-03 14:47:56 +0700] [3297958] [INFO] Worker exiting (pid: 3297958)
+[2025-11-03 14:47:56 +0700] [3625333] [INFO] Booting worker with pid: 3625333
+[2025-11-03 14:48:31 +0700] [3052641] [CRITICAL] WORKER TIMEOUT (pid:3286334)
+[2025-11-03 14:48:31 +0700] [3286334] [ERROR] Error handling request /predict
+Traceback (most recent call last):
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/gunicorn/workers/sync.py", line 177, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/flask/app.py", line 1498, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/workspace/competitions/AIC_2025/SIU_ChillOut/Main_Source/Web/server.py", line 104, in predict
+    result = requests.get(output).json()
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 536, in _make_request
+    response = conn.getresponse()
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/urllib3/connection.py", line 507, in getresponse
+    httplib_response = super().getresponse()
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/http/client.py", line 1348, in getresponse
+    response.begin()
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/http/client.py", line 316, in begin
+    version, status, reason = self._read_status()
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/http/client.py", line 277, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/socket.py", line 669, in readinto
+    return self._sock.recv_into(b)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/ssl.py", line 1274, in recv_into
+    return self.read(nbytes, buffer)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/ssl.py", line 1132, in read
+    return self._sslobj.read(len, buffer)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-11-03 14:48:31 +0700] [3286334] [INFO] Worker exiting (pid: 3286334)
+[2025-11-03 14:48:31 +0700] [3627446] [INFO] Booting worker with pid: 3627446
+[2025-11-03 14:48:46 +0700] [3052641] [CRITICAL] WORKER TIMEOUT (pid:3052795)
+[2025-11-03 14:48:46 +0700] [3052795] [ERROR] Error handling request /predict
+Traceback (most recent call last):
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/gunicorn/workers/sync.py", line 177, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/flask/app.py", line 1498, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/workspace/competitions/AIC_2025/SIU_ChillOut/Main_Source/Web/server.py", line 104, in predict
+    result = requests.get(output).json()
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 536, in _make_request
+    response = conn.getresponse()
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/urllib3/connection.py", line 507, in getresponse
+    httplib_response = super().getresponse()
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/http/client.py", line 1348, in getresponse
+    response.begin()
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/http/client.py", line 316, in begin
+    version, status, reason = self._read_status()
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/http/client.py", line 277, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/socket.py", line 669, in readinto
+    return self._sock.recv_into(b)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/ssl.py", line 1274, in recv_into
+    return self.read(nbytes, buffer)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/ssl.py", line 1132, in read
+    return self._sslobj.read(len, buffer)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-11-03 14:48:46 +0700] [3052795] [INFO] Worker exiting (pid: 3052795)
+[2025-11-03 14:48:46 +0700] [3628479] [INFO] Booting worker with pid: 3628479
+[2025-11-03 14:53:18 +0700] [3052641] [CRITICAL] WORKER TIMEOUT (pid:3625333)
+[2025-11-03 14:53:18 +0700] [3625333] [ERROR] Error handling request /predict
+Traceback (most recent call last):
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/gunicorn/workers/sync.py", line 177, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/flask/app.py", line 1498, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/workspace/competitions/AIC_2025/SIU_ChillOut/Main_Source/Web/server.py", line 104, in predict
+    result = requests.get(output).json()
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 536, in _make_request
+    response = conn.getresponse()
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/urllib3/connection.py", line 507, in getresponse
+    httplib_response = super().getresponse()
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/http/client.py", line 1348, in getresponse
+    response.begin()
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/http/client.py", line 316, in begin
+    version, status, reason = self._read_status()
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/http/client.py", line 277, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/socket.py", line 669, in readinto
+    return self._sock.recv_into(b)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/ssl.py", line 1274, in recv_into
+    return self.read(nbytes, buffer)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/ssl.py", line 1132, in read
+    return self._sslobj.read(len, buffer)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-11-03 14:53:18 +0700] [3625333] [INFO] Worker exiting (pid: 3625333)
+[2025-11-03 14:53:18 +0700] [3652954] [INFO] Booting worker with pid: 3652954
+[2025-11-03 14:54:02 +0700] [3052641] [CRITICAL] WORKER TIMEOUT (pid:3652954)
+[2025-11-03 14:54:02 +0700] [3652954] [ERROR] Error handling request /predict
+Traceback (most recent call last):
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/gunicorn/workers/sync.py", line 177, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/flask/app.py", line 1498, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/workspace/competitions/AIC_2025/SIU_ChillOut/Main_Source/Web/server.py", line 104, in predict
+    result = requests.get(output).json()
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 536, in _make_request
+    response = conn.getresponse()
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/urllib3/connection.py", line 507, in getresponse
+    httplib_response = super().getresponse()
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/http/client.py", line 1348, in getresponse
+    response.begin()
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/http/client.py", line 316, in begin
+    version, status, reason = self._read_status()
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/http/client.py", line 277, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/socket.py", line 669, in readinto
+    return self._sock.recv_into(b)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/ssl.py", line 1274, in recv_into
+    return self.read(nbytes, buffer)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/ssl.py", line 1132, in read
+    return self._sslobj.read(len, buffer)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-11-03 14:54:02 +0700] [3652954] [INFO] Worker exiting (pid: 3652954)
+[2025-11-03 14:54:02 +0700] [3662444] [INFO] Booting worker with pid: 3662444
+[2025-11-03 14:54:07 +0700] [3052641] [CRITICAL] WORKER TIMEOUT (pid:3628479)
+[2025-11-03 14:54:07 +0700] [3628479] [ERROR] Error handling request /predict
+Traceback (most recent call last):
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/gunicorn/workers/sync.py", line 177, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/flask/app.py", line 1498, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/workspace/competitions/AIC_2025/SIU_ChillOut/Main_Source/Web/server.py", line 104, in predict
+    result = requests.get(output).json()
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 536, in _make_request
+    response = conn.getresponse()
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/urllib3/connection.py", line 507, in getresponse
+    httplib_response = super().getresponse()
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/http/client.py", line 1348, in getresponse
+    response.begin()
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/http/client.py", line 316, in begin
+    version, status, reason = self._read_status()
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/http/client.py", line 277, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/socket.py", line 669, in readinto
+    return self._sock.recv_into(b)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/ssl.py", line 1274, in recv_into
+    return self.read(nbytes, buffer)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/ssl.py", line 1132, in read
+    return self._sslobj.read(len, buffer)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-11-03 14:54:07 +0700] [3628479] [INFO] Worker exiting (pid: 3628479)
+[2025-11-03 14:54:07 +0700] [3663804] [INFO] Booting worker with pid: 3663804
+[2025-11-03 14:54:42 +0700] [3052641] [CRITICAL] WORKER TIMEOUT (pid:3663804)
+[2025-11-03 14:54:42 +0700] [3663804] [ERROR] Error handling request /predict
+Traceback (most recent call last):
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/gunicorn/workers/sync.py", line 177, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/flask/app.py", line 1498, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/workspace/competitions/AIC_2025/SIU_ChillOut/Main_Source/Web/server.py", line 104, in predict
+    result = requests.get(output).json()
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 536, in _make_request
+    response = conn.getresponse()
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/urllib3/connection.py", line 507, in getresponse
+    httplib_response = super().getresponse()
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/http/client.py", line 1348, in getresponse
+    response.begin()
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/http/client.py", line 316, in begin
+    version, status, reason = self._read_status()
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/http/client.py", line 277, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/socket.py", line 669, in readinto
+    return self._sock.recv_into(b)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/ssl.py"[2025-11-03 14:54:47 +0700] [3052641] [ERROR] Worker (pid:3663804) was sent SIGKILL! Perhaps out of memory?
+[2025-11-03 14:54:47 +0700] [3668043] [INFO] Booting worker with pid: 3668043
+[2025-11-03 14:55:45 +0700] [3052641] [CRITICAL] WORKER TIMEOUT (pid:3061124)
+[2025-11-03 14:55:45 +0700] [3061124] [ERROR] Error handling request /predict
+Traceback (most recent call last):
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/gunicorn/workers/sync.py", line 177, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/flask/app.py", line 1498, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/workspace/competitions/AIC_2025/SIU_ChillOut/Main_Source/Web/server.py", line 104, in predict
+    result = requests.get(output).json()
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 536, in _make_request
+    response = conn.getresponse()
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/urllib3/connection.py", line 507, in getresponse
+    httplib_response = super().getresponse()
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/http/client.py", line 1348, in getresponse
+    response.begin()
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/http/client.py", line 316, in begin
+    version, status, reason = self._read_status()
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/http/client.py", line 277, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/socket.py", line 669, in readinto
+    return self._sock.recv_into(b)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/ssl.py", line 1274, in recv_into
+    return self.read(nbytes, buffer)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/ssl.py", line 1132, in read
+    return self._sslobj.read(len, buffer)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-11-03 14:55:45 +0700] [3061124] [INFO] Worker exiting (pid: 3061124)
+[2025-11-03 14:55:45 +0700] [3680334] [INFO] Booting worker with pid: 3680334
+[2025-11-03 14:56:22 +0700] [3052641] [CRITICAL] WORKER TIMEOUT (pid:3680334)
+[2025-11-03 14:56:22 +0700] [3680334] [ERROR] Error handling request /predict
+Traceback (most recent call last):
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/gunicorn/workers/sync.py", line 177, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/flask/app.py", line 1498, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/workspace/competitions/AIC_2025/SIU_ChillOut/Main_Source/Web/server.py", line 104, in predict
+    result = requests.get(output).json()
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 536, in _make_request
+    response = conn.getresponse()
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/urllib3/connection.py", line 507, in getresponse
+    httplib_response = super().getresponse()
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/http/client.py", line 1348, in getresponse
+    response.begin()
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/http/client.py", line 316, in begin
+    version, status, reason = self._read_status()
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/http/client.py", line 277, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/socket.py", line 669, in readinto
+    return self._sock.recv_into(b)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/ssl.py", line 1274, in recv_into
+    return self.read(nbytes, buffer)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/ssl.py", line 1132, in read
+    return self._sslobj.read(len, buffer)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-11-03 14:56:22 +0700] [3680334] [INFO] Worker exiting (pid: 3680334)
+[2025-11-03 14:56:22 +0700] [3685938] [INFO] Booting worker with pid: 3685938
+[2025-11-03 15:13:55 +0700] [3052641] [CRITICAL] WORKER TIMEOUT (pid:3668043)
+[2025-11-03 15:13:55 +0700] [3668043] [ERROR] Error handling request /predict
+Traceback (most recent call last):
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/gunicorn/workers/sync.py", line 177, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/flask/app.py", line 1498, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/workspace/competitions/AIC_2025/SIU_ChillOut/Main_Source/Web/server.py", line 104, in predict
+    result = requests.get(output).json()
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 536, in _make_request
+    response = conn.getresponse()
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/urllib3/connection.py", line 507, in getresponse
+    httplib_response = super().getresponse()
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/http/client.py", line 1348, in getresponse
+    response.begin()
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/http/client.py", line 316, in begin
+    version, status, reason = self._read_status()
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/http/client.py", line 277, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/socket.py", line 669, in readinto
+    return self._sock.recv_into(b)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/ssl.py", line 1274, in recv_into
+    return self.read(nbytes, buffer)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/ssl.py", line 1132, in read
+    return self._sslobj.read(len, buffer)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-11-03 15:13:56 +0700] [3668043] [INFO] Worker exiting (pid: 3668043)
+[2025-11-03 15:13:56 +0700] [3825771] [INFO] Booting worker with pid: 3825771
+[2025-11-03 15:17:49 +0700] [3052641] [CRITICAL] WORKER TIMEOUT (pid:3825771)
+[2025-11-03 15:17:49 +0700] [3825771] [ERROR] Error handling request /predict
+Traceback (most recent call last):
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/gunicorn/workers/sync.py", line 177, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/flask/app.py", line 1498, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/workspace/competitions/AIC_2025/SIU_ChillOut/Main_Source/Web/server.py", line 104, in predict
+    result = requests.get(output).json()
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 536, in _make_request
+    response = conn.getresponse()
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/urllib3/connection.py", line 507, in getresponse
+    httplib_response = super().getresponse()
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/http/client.py", line 1348, in getresponse
+    response.begin()
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/http/client.py", line 316, in begin
+    version, status, reason = self._read_status()
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/http/client.py", line 277, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/socket.py", line 669, in readinto
+    return self._sock.recv_into(b)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/ssl.py", line 1274, in recv_into
+    return self.read(nbytes, buffer)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/ssl.py", line 1132, in read
+    return self._sslobj.read(len, buffer)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-11-03 15:17:49 +0700] [3825771] [INFO] Worker exiting (pid: 3825771)
+[2025-11-03 15:17:49 +0700] [3861157] [INFO] Booting worker with pid: 3861157
+[2025-11-03 15:23:58 +0700] [3052641] [CRITICAL] WORKER TIMEOUT (pid:3627446)
+[2025-11-03 15:23:58 +0700] [3627446] [ERROR] Error handling request /predict
+Traceback (most recent call last):
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/gunicorn/workers/sync.py", line 177, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/flask/app.py", line 1498, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/workspace/competitions/AIC_2025/SIU_ChillOut/Main_Source/Web/server.py", line 104, in predict
+    result = requests.get(output).json()
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 536, in _make_request
+    response = conn.getresponse()
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/urllib3/connection.py", line 507, in getresponse
+    httplib_response = super().getresponse()
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/http/client.py", line 1348, in getresponse
+    response.begin()
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/http/client.py", line 316, in begin
+    version, status, reason = self._read_status()
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/http/client.py", line 277, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/socket.py", line 669, in readinto
+    return self._sock.recv_into(b)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/ssl.py", line 1274, in recv_into
+    return self.read(nbytes, buffer)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/ssl.py", line 1132, in read
+    return self._sslobj.read(len, buffer)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-11-03 15:23:58 +0700] [3627446] [INFO] Worker exiting (pid: 3627446)
+[2025-11-03 15:23:58 +0700] [3898754] [INFO] Booting worker with pid: 3898754
+[2025-11-03 15:24:40 +0700] [3052641] [CRITICAL] WORKER TIMEOUT (pid:3898754)
+[2025-11-03 15:24:40 +0700] [3898754] [ERROR] Error handling request /predict
+Traceback (most recent call last):
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/gunicorn/workers/sync.py", line 177, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/flask/app.py", line 1498, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/workspace/competitions/AIC_2025/SIU_ChillOut/Main_Source/Web/server.py", line 104, in predict
+    result = requests.get(output).json()
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 536, in _make_request
+    response = conn.getresponse()
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/urllib3/connection.py", line 507, in getresponse
+    httplib_response = super().getresponse()
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/http/client.py", line 1348, in getresponse
+    response.begin()
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/http/client.py", line 316, in begin
+    version, status, reason = self._read_status()
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/http/client.py", line 277, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/socket.py", line 669, in readinto
+    return self._sock.recv_into(b)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/ssl.py", line 1274, in recv_into
+    return self.read(nbytes, buffer)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/ssl.py", line 1132, in read
+    return self._sslobj.read(len, buffer)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-11-03 15:24:40 +0700] [3898754] [INFO] Worker exiting (pid: 3898754)
+[2025-11-03 15:24:40 +0700] [3905896] [INFO] Booting worker with pid: 3905896
+[2025-11-03 15:27:23 +0700] [3052641] [CRITICAL] WORKER TIMEOUT (pid:3905896)
+[2025-11-03 15:27:23 +0700] [3905896] [ERROR] Error handling request /predict
+Traceback (most recent call last):
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/gunicorn/workers/sync.py", line 177, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/flask/app.py", line 1498, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/workspace/competitions/AIC_2025/SIU_ChillOut/Main_Source/Web/server.py", line 104, in predict
+    result = requests.get(output).json()
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 536, in _make_request
+    response = conn.getresponse()
+  File "/home/aiclub02/.local/lib/python3.8/site-packages/urllib3/connection.py", line 507, in getresponse
+    httplib_response = super().getresponse()
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/http/client.py", line 1348, in getresponse
+    response.begin()
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/http/client.py", line 316, in begin
+    version, status, reason = self._read_status()
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/http/client.py", line 277, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/socket.py", line 669, in readinto
+    return self._sock.recv_into(b)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/ssl.py", line 1274, in recv_into
+    return self.read(nbytes, buffer)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/ssl.py", line 1132, in read
+    return self._sslobj.read(len, buffer)
+  File "/home/aiclub02/micromamba/envs/lavis/lib/python3.8/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-11-03 15:27:23 +0700] [3905896] [INFO] Worker exiting (pid: 3905896)
+[2025-11-03 15:27:23 +0700] [3933042] [INFO] Booting worker with pid: 3933042

@@ -1,0 +1,16 @@
+FROM nvidia/cuda:12.2.0-cudnn11-devel-ubuntu22.04
+
+WORKDIR /workspace/API/MetaClip_FastAPI
+
+# Copy code
+COPY . .
+
+# Cài dependencies
+RUN apt-get update && apt-get install -y python3 python3-pip
+RUN pip3 install --no-cache-dir -r requirements.txt
+
+# Expose port
+EXPOSE 8594
+
+# Lệnh chạy gunicorn
+CMD ["gunicorn", "-w", "2", "-k", "uvicorn.workers.UvicornWorker", "-b", "0.0.0.0:8594", "MetaClip_FastAPI:app"]
